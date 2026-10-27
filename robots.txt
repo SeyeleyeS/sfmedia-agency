@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sfmedia.agency/sitemap.xml
+Sitemap: https://claudesq.com/sitemap.xml
