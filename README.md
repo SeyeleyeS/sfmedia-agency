@@ -1,2 +1,3 @@
 # sfmedia.agency
-Static company site for SFMedia.agency (client concierge for injury & DUI law firms, and BADS). Served by GitHub Pages at https://sfmedia.agency.
+
+Redirects to https://bamedia.agency (Bay Area Media). Previous site preserved at tag pre-redirect-2026-10-29.
