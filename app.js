@@ -378,6 +378,21 @@
     return h("div", { className: "errors", role: "alert" }, [h("p", { text: "Nothing was saved." }), h("ul", {}, [h("li", { text: message })])]);
   }
 
+  function urbanPhoto(src, srcset, width, height, alt, caption) {
+    return h("figure", { className: "urban-photo" }, [
+      h("img", {
+        src: src,
+        srcset: srcset,
+        sizes: "(max-width: 800px) 92vw, 440px",
+        width: String(width),
+        height: String(height),
+        alt: alt,
+        decoding: "async"
+      }),
+      h("figcaption", { text: caption })
+    ]);
+  }
+
   function urbanSection() {
     return h("section", { id: "urban", className: "panel urban" }, [
       h("h2", { text: "Urban Concierge – Bay Area" }),
@@ -385,8 +400,28 @@
       h("p", { text: "The brief covers Bay Area events and dining, with compact weather and travel notes. This page does not copy that page, store it, or request it." }),
       h("p", {}, [h("a", { className: "external-brief", href: EXTERNAL_BRIEF, target: "_blank", rel: "noopener noreferrer", text: "Open the external live brief" })]),
       h("p", { className: "hint", text: "This page does not request that address. The browser opens it only if you choose the link." }),
+      h("h3", { text: "Supplied views" }),
+      h("p", { className: "meta", text: "Two owner photos. No event or date is attached. Live delivery is not connected." }),
+      h("div", { className: "urban-photos" }, [
+        urbanPhoto(
+          "photos/city-1600.jpg",
+          "photos/city-800.jpg 800w, photos/city-1600.jpg 1600w",
+          1600,
+          1066,
+          "Urban architecture view from a planted terrace toward towers and an overpass",
+          "Urban architecture"
+        ),
+        urbanPhoto(
+          "photos/marina-1445.jpg",
+          "photos/marina-800.jpg 800w, photos/marina-1445.jpg 1445w",
+          1445,
+          1088,
+          "Red lips sculpture beside a marina and docked boats",
+          "Marina red lips sculpture"
+        )
+      ]),
       h("h3", { text: "Planned offerings" }),
-      h("p", { className: "meta", text: "Planned list only. Not an active feed. Photos and live delivery wait for supplied photos and approval." }),
+      h("p", { className: "meta", text: "Planned list only. Not an active feed. Live delivery is not connected." }),
       h("ul", { className: "plain" }, [
         h("li", { text: "sfmedia.agency is the chosen future name for Custom Concierge. Hosting and review are separate. This demo does not redirect BAMedia." }),
         h("li", { text: "Photo-led industry updates, after approval: real estate; lifestyle and salon trends; injury and DUI law; Innkeeper Weekly; foodie insights." })
